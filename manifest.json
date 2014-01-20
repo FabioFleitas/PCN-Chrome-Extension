@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+
+  "name": "PennCourseNotify Extension",
+  "description": "Add PennCourseNotify buttons to PennInTouch",
+  "version": "1.0",
+  "author": "Fabio Fleitas",
+
+  "content_scripts": [
+    {
+      "matches": ["https://pennintouch.apps.upenn.edu/pennInTouch/jsp/fast2.do*"],
+      "js": ["jquery.min.js", "script.js"]
+    }
+  ],
+
+  "web_accessible_resources": ["jquery-1.10.2.min.map"]
+}
