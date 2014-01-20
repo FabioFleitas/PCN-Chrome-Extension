@@ -6,6 +6,10 @@
   "version": "1.0",
   "author": "Fabio Fleitas",
 
+  "icons": { "48": "icon48.png", "128": "icon128.png" },
+  "options_page": "options.html",
+  "homepage_url": "http://www.penncoursenotify.com/",
+
   "content_scripts": [
     {
       "matches": ["https://pennintouch.apps.upenn.edu/pennInTouch/jsp/fast2.do*"],
@@ -13,5 +17,7 @@
     }
   ],
 
-  "web_accessible_resources": ["jquery-1.10.2.min.map"]
+  "web_accessible_resources": ["jquery-1.10.2.min.map"],
+
+  "permissions": ["http://localhost:8080/"]
 }
