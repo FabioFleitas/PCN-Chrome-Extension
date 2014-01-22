@@ -13,11 +13,11 @@
   "content_scripts": [
     {
       "matches": ["https://pennintouch.apps.upenn.edu/pennInTouch/jsp/fast2.do*"],
-      "js": ["jquery.min.js", "script.js"]
+      "js": ["js/jquery.min.js", "js/script.js"]
     }
   ],
 
-  "web_accessible_resources": ["jquery-1.10.2.min.map"],
+  "web_accessible_resources": ["js/jquery-1.10.2.min.map"],
 
-  "permissions": ["http://localhost:8080/"]
+  "permissions": ["http://localhost:8080/", "storage"]
 }
