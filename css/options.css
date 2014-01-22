@@ -16,6 +16,11 @@ h1 {
   margin-bottom: 10px;
 }
 
+.well {
+  margin: 20px auto 0;
+  max-width: 400px;
+}
+
 /* Custom CSS above */
 
 body {

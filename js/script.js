@@ -1,15 +1,15 @@
 $(document).ready(function() {
 
-  function sendRequest(button) {
+  function sendRequest(button, email) {
     // Get courseId and replace all non-alphanumeric characters with space
     var courseId = $(button).val();
     courseId = courseId.replace(/(\W+)/g, ' ');
-    console.log(courseId);
 
+    // Send AJAX POST request to PennCourseNotify
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:8080/',
-      data: { 'course': courseId, 'email': 'cubanfabio@gmail.com'},
+      url: 'http://www.penncoursenotify.com/',
+      data: { 'course': courseId, 'email': email},
       dataType: 'json',
       statusCode: {
         200: function() {
@@ -61,7 +61,18 @@ $(document).ready(function() {
       }
 
       $('button.notify-button').click(function() {
-        sendRequest($(this));
+        var button = $(this);
+
+        // Get email from chrome local storage
+        chrome.storage.local.get('email', function (result) {
+          var email = result.email;
+          if (email == "" || email == null) {
+            alert("PennCourseNotify Alert: Please add an email. Go to Settings -> Extensions -> PennCourseNotify Extension -> Options");
+            return;
+          }
+
+          sendRequest(button, email);
+        });
       })
     }
   }
