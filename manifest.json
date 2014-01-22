@@ -10,6 +10,11 @@
   "options_page": "options.html",
   "homepage_url": "http://www.penncoursenotify.com/",
 
+  "background": {
+    "persistent": false,
+    "scripts": ["js/install.js"]
+  },
+
   "content_scripts": [
     {
       "matches": ["https://pennintouch.apps.upenn.edu/pennInTouch/jsp/fast2.do*"],
